@@ -1,0 +1,20 @@
+{
+    "repertory":[
+        {"warehouse": "鱼珠仓", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"warehouse": "吉山仓", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"warehouse": "江村仓", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"warehouse": "海福仓", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"warehouse": "天又天仓", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"warehouse": "旧港仓", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"warehouse": "南沙仓", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"warehouse": "建誉仓", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"warehouse": "弘凯仓", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" }
+    ],
+    "storage":[
+        {"text": "当前库存合计", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"text": "一周前库存", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"text": "月初库存", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"text": "年初库存", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" },
+        {"text": "去年同期库存", "thread_num": "564.25", "snail_num":"15000.00", "altitude_num":"100000.00","total":"115564.25" }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "pages": [
+        "pages/warehouse/warehouse",
+        "pages/brands/brands",
+        "pages/size/size",
+        "pages/outInput/outInput"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "black",
+        "navigationBarTitleText": "库存统计",
+        "navigationBarTextStyle": "#fff"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "black",
+        "list": [
+            {
+                "pagePath": "pages/warehouse/warehouse",
+                "text": "仓库库存",
+                "iconPath": "images/home.png",
+                "selectedIconPath": "images/home-actived.png"
+            },
+            {
+                "pagePath": "pages/brands/brands",
+                "text": "品牌库存",
+                "iconPath": "images/note.png",
+                "selectedIconPath": "images/note-actived.png"
+            },
+            {
+                "pagePath": "pages/size/size",
+                "text": "规格库存",
+                "iconPath": "images/star.png",
+                "selectedIconPath": "images/star-actived.png"
+            },
+            {
+                "pagePath": "pages/outInput/outInput",
+                "text": "出入库",
+                "iconPath": "images/safari.png",
+                "selectedIconPath": "images/safari-actived.png"
+            }
+        ]
+    }
+}

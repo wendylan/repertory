@@ -1,0 +1,93 @@
+/* pages/warehouse/warehouse.wxss */
+page{
+    background: #eeeeee;
+    height: 100%;
+}
+
+.button_box{
+    display: flex;
+}
+.button_box button{
+    width: 100%;
+}
+.content{
+    margin: 10px;
+}
+.top text{
+    color: #666;
+}
+.fa-filter{
+    color: #909399;
+    font-size: 20px;
+    float: right;
+     margin-right: 10px; 
+}
+
+.flex_img{
+    display: flex;
+    font-size: 14px;
+}
+.flex_img text{
+        font-weight: bold;
+}
+
+.filter_box{
+    width: 200px;
+    height: 100%;
+    background: #fff;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+
+/* table样式 */
+.table {
+  border: 0px solid darkgray;
+  margin-top: 10px;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+}
+.bg-w{
+   background: snow; 
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #3366FF;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+
+.tip_box{
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+}
+
+.chart-item{
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+.canvas {
+    width: 350px;
+    height: 200px;
+    text-align: center;
+}  
