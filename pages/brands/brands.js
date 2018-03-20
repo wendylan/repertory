@@ -23,6 +23,58 @@ Page({
             { name: '盘螺', value: '盘螺', checked: 'true' },
             { name: '高线', value: '高线' },
         ],
+        repertory: [
+            { "brand": "广钢", "thread_num": "564", "snail_num": "15000", "altitude_num": "100000", "total": "115564", "outInput":"123" },
+            { "brand": "湘钢", "thread_num": "564", "snail_num": "15000", "altitude_num": "100000", "total": "115564", "outInput": "123"},
+            { "brand": "粤钢", "thread_num": "564", "snail_num": "15000", "altitude_num": "100000", "total": "115564", "outInput": "123"},
+            { "brand": "韶钢", "thread_num": "564", "snail_num": "15000", "altitude_num": "100000", "total": "115564", "outInput": "123"}
+        ],
+        brandDetail: [
+            {
+                "name": '广钢',
+                "options": [
+                    {"name": "螺纹钢", "size": 14, "material": "HRB400E", "num": 123},
+                    {"name": "螺纹钢", "size": 14, "material": "HRB400", "num": 123},
+                    {"name": "螺纹钢", "size": 10, "material": "HRB400E", "num": 123},
+                    {"name": "螺纹钢", "size": 10, "material": "HRB400", "num": 123},
+                    {"name": "盘螺", "size": 10, "material": "HRB400", "num": 123},
+                    {"name": "高线", "size": 10, "material": "HRB400", "num": 123}
+                ]
+            },
+            {
+                "name": '湘钢',
+                "options": [
+                    { "name": "螺纹钢", "size": 14, "material": "HRB400E", "num": 123 },
+                    { "name": "螺纹钢", "size": 14, "material": "HRB400", "num": 123 },
+                    { "name": "螺纹钢", "size": 10, "material": "HRB400E", "num": 123 },
+                    { "name": "螺纹钢", "size": 10, "material": "HRB400", "num": 123 },
+                    { "name": "盘螺", "size": 10, "material": "HRB400", "num": 123 },
+                    { "name": "高线", "size": 10, "material": "HRB400", "num": 123 }
+                ]
+            },
+            {
+                "name": '粤钢',
+                "options": [
+                    { "name": "螺纹钢", "size": 14, "material": "HRB400E", "num": 123 },
+                    { "name": "螺纹钢", "size": 14, "material": "HRB400", "num": 123 },
+                    { "name": "螺纹钢", "size": 10, "material": "HRB400E", "num": 123 },
+                    { "name": "螺纹钢", "size": 10, "material": "HRB400", "num": 123 },
+                    { "name": "盘螺", "size": 10, "material": "HRB400", "num": 123 },
+                    { "name": "高线", "size": 10, "material": "HRB400", "num": 123 }
+                ]
+            },
+            {
+                "name": '韶钢',
+                "options": [
+                    { "name": "螺纹钢", "size": 14, "material": "HRB400E", "num": 123 },
+                    { "name": "螺纹钢", "size": 14, "material": "HRB400", "num": 123 },
+                    { "name": "螺纹钢", "size": 10, "material": "HRB400E", "num": 123 },
+                    { "name": "螺纹钢", "size": 10, "material": "HRB400", "num": 123 },
+                    { "name": "盘螺", "size": 10, "material": "HRB400", "num": 123 },
+                    { "name": "高线", "size": 10, "material": "HRB400", "num": 123 }
+                ]
+            },
+        ],
     },
 
     // 趋势图的展示
@@ -95,6 +147,24 @@ Page({
         this.openFilter();
     },
 
+    // 显示品牌库存详细信息
+    showDetail(e){
+        // e.currentTarget.dataset.index;
+        // console.log(e.currentTarget.dataset.index);
+        let brand = e.currentTarget.dataset.index;
+        let brandInfo = null;
+        for(let data of this.data.brandDetail){
+            if(data.name == brand){
+                brandInfo = data;
+                break;
+            }
+        }
+        brandInfo = JSON.stringify(brandInfo);
+        // console.log(brandInfo);
+        wx.navigateTo({
+            url: './brandDetail/brandDetail?brandInfo='+brandInfo,
+        });
+    },
     onLoad: function (options) {
         // 页面初始化 options为页面跳转所带来的参数
         this.getChartData();

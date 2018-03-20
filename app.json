@@ -3,7 +3,8 @@
         "pages/warehouse/warehouse",
         "pages/brands/brands",
         "pages/size/size",
-        "pages/outInput/outInput"
+        "pages/outInput/outInput",
+        "pages/brands/brandDetail/brandDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",

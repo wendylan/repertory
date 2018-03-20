@@ -26,19 +26,21 @@
                 <!-- 仓库存储数量 -->
                 <block wx:for="{{repertory}}" wx:key="{{index}}">
                     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-                        <view class="td">{{item.warehouse}}</view>
+                        <view class="td" bindtap='showDetail' data-index="{{item.brand}}">{{item.brand}}</view>
                         <view class="td">
                             <text>{{item.thread_num}}</text> </view>
                         <view class="td">{{item.snail_num}}</view>
                         <view class="td">{{item.altitude_num}}</view>
                         <view class="td">{{item.total}}</view>
+                        <view class="td">{{item.outInput}}</view>
                     </view>
                     <view class="tr" wx:else>
-                        <view class="td">{{item.warehouse}}</view>
+                        <view class="td">{{item.brand}}</view>
                         <view class="td">{{item.thread_num}}</view>
                         <view class="td">{{item.snail_num}}</view>
                         <view class="td">{{item.altitude_num}}</view>
                         <view class="td">{{item.total}}</view>
+                        <view class="td">{{item.outInput}}</view>
                     </view>
                 </block>
                 <!-- 仓库存储小计 -->

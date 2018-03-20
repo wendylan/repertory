@@ -1,0 +1,47 @@
+/* pages/brands/brandDetail/brandDetail.wxss */
+
+.content{
+    width: 100%;
+}
+
+/* table样式 */
+
+.table {
+    border: 0px solid darkgray;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.tr {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 40px;
+    align-items: center;
+}
+
+.td {
+    width: 40%;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+}
+
+.bg-w {
+    background: snow;
+}
+
+.bg-g {
+    background: #e6f3f9;
+}
+
+.th {
+    width: 50%;
+    justify-content: center;
+    background: #36f;
+    color: #fff;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    font-size: 14px;
+}
