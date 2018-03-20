@@ -1,9 +1,9 @@
 <!--pages/warehouse/warehouse.wxml-->
 
 <view>
-    <view class='button_box'>
-        <button size='default' bindtap='openTable'>表格</button>
-        <button size='default' bindtap='openImg'>趋势图</button>
+    <view class='tab_box'>
+        <button hover-class='hover' size='default' bindtap='openTable'>表格</button>
+        <button hover-class='hover' size='default' bindtap='openImg'>趋势图</button>
     </view>
     <view class='content'>
         <view class='top'>
@@ -81,22 +81,15 @@
 </view>
 
 <view wx:if="{{isOpen}}" class='filter_box'>
-    this is test
-</view>
-
-<!-- <view>
-    <view>
-        <picker mode="">
-            <text>仓库：</text>
-            <text>全部</text>
-        </picker>
-    </view>
-</view>
-
-<view class='section'>
-    <checkbox-group bindchange="checkboxChange">
+    <checkbox-group bindchange="checkboxChange" class="check_box">
         <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
-            <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
         </label>
     </checkbox-group>
-</view> -->
+
+    <view class='confirm_reset'>
+        <button type="warn" size='mini' bindtap='resetSelect'>重置</button>
+        <button type="primary" size="mini" bindtap='confirmSelect'>确定</button>
+    </view>
+    
+</view>

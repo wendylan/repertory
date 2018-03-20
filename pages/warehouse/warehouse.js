@@ -8,7 +8,9 @@ Page({
             { name: 'CKRZ', value: '容正仓' },
             { name: 'ck_HPLG', value: '黄埔旧港', checked: 'true' },
             { name: 'NS', value: '广物南沙仓' },
-            { name: 'YZ', value: '广物鱼珠仓' }
+            { name: 'YZ', value: '广物鱼珠仓' },
+            { name: 'YZ', value: '鱼珠仓' },
+            { name: 'YZ', value: '鱼珠仓' }
         ],
         isOpen: false,
         isTable: true,
@@ -30,9 +32,6 @@ Page({
             { "text": "年初库存", "thread_num": "564", "snail_num": "15000", "altitude_num": "100000", "total": "115564" },
             { "text": "去年同期库存", "thread_num": "564", "snail_num": "15000", "altitude_num": "100000", "total": "115564" }
         ]
-    },
-    checkboxChange: function (e) {
-        console.log('checkbox发生change事件，携带value值为：', e.detail.value)
     },
     getInitData(){
         wx.request({
@@ -67,7 +66,7 @@ Page({
                 min: 0
             },
             width: 350,
-            height: 200
+            height: 300
         });
     },
     // 打开表格
@@ -83,6 +82,9 @@ Page({
         this.setData({
             isTable: false
         });
+        if (isTable) {
+            this.getChartData();
+        }
     },
     // 打开筛选框
     openFilter(){
@@ -92,24 +94,33 @@ Page({
         });
     },
 
+    // 品名单选框
     radioChange: function (e) {
         console.log('radio发生change事件，携带value值为：', e.detail.value)
     },
 
-    getScreenWidth: function () {
-        console.log(wx.getSystemInfoSync().windowWidth);
-        this.setData({
-            screenWidth: wx.getSystemInfoSync().windowWidth
-        });
-    },  
+    // 仓库复选框
+    checkboxChange: function (e) {
+        console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    },
+    // 确定
+    confirmSelect(){
+        console.log('confirm');
+        this.openFilter();
+    },
 
+    // 重置
+    resetSelect(){
+        console.log('reset');
+        this.openFilter();
+    },
     onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
+        this.getChartData();
     },
     onReady:function(){
     // 页面渲染完成
         // this.getInitData();
-        this.getScreenWidth();
     },
     onShow:function(){
     // 页面显示
