@@ -1,2 +1,97 @@
 <!--pages/brands/brands.wxml-->
-<text>pages/brands/brands.wxml</text>
+
+<view>
+    <view class='tab_box'>
+        <button hover-class='hover' size='default' bindtap='openTable'>表格</button>
+        <button hover-class='hover' size='default' bindtap='openImg'>趋势图</button>
+    </view>
+    <view class='content'>
+        <view class='top'>
+            <text>2018-03-06</text>
+            <icon class='fa fa-filter' bindtap='openFilter'></icon>
+        </view>
+
+        <!-- 表格 -->
+        <view wx:if="{{isTable}}">
+
+            <view class="table">
+                <view class="tr bg-w">
+                    <view class="th">品牌</view>
+                    <view class="th">螺纹钢</view>
+                    <view class="th">盘螺</view>
+                    <view class="th">高线</view>
+                    <view class="th">小计</view>
+                    <view class="th">今日出库</view>
+                </view>
+                <!-- 仓库存储数量 -->
+                <block wx:for="{{repertory}}" wx:key="{{index}}">
+                    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                        <view class="td">{{item.warehouse}}</view>
+                        <view class="td">
+                            <text>{{item.thread_num}}</text> </view>
+                        <view class="td">{{item.snail_num}}</view>
+                        <view class="td">{{item.altitude_num}}</view>
+                        <view class="td">{{item.total}}</view>
+                    </view>
+                    <view class="tr" wx:else>
+                        <view class="td">{{item.warehouse}}</view>
+                        <view class="td">{{item.thread_num}}</view>
+                        <view class="td">{{item.snail_num}}</view>
+                        <view class="td">{{item.altitude_num}}</view>
+                        <view class="td">{{item.total}}</view>
+                    </view>
+                </block>
+                <!-- 仓库存储小计 -->
+                <block wx:for="{{storage}}" wx:key="{{index}}">
+                    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+                        <view class="td">{{item.text}}</view>
+                        <view class="td">{{item.thread_num}}</view>
+                        <view class="td">{{item.snail_num}}</view>
+                        <view class="td">{{item.altitude_num}}</view>
+                        <view class="td">{{item.total}}</view>
+                    </view>
+                    <view class="tr" wx:else>
+                        <view class="td">{{item.text}}</view>
+                        <view class="td">{{item.thread_num}}</view>
+                        <view class="td">{{item.snail_num}}</view>
+                        <view class="td">{{item.altitude_num}}</view>
+                        <view class="td">{{item.total}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="tip_box">红色表示当前数据对比前一天的数据有所增长，绿色则相反</view>
+
+        </view>
+
+        <!-- 趋势图 -->
+        <view wx:if="{{!isTable}}">
+            <view class='flex_img'>
+                <text>品种合计：</text>
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <label class="radio" wx:for="{{cateType}}" wx:key="{{index}}">
+                        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+                    </label>
+                </radio-group>
+            </view>
+            <!-- 图表 -->
+            <view class="chart-item">
+                <canvas canvas-id="warehouse-chart" class='canvas'></canvas>
+            </view>
+        </view>
+    </view>
+
+</view>
+
+<view wx:if="{{isOpen}}" class='filter_box'>
+    <checkbox-group bindchange="checkboxChange" class="check_box">
+        <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+            <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+    </checkbox-group>
+
+    <view class='confirm_reset'>
+        <button type="warn" size='mini' bindtap='resetSelect'>重置</button>
+        <button type="primary" size="mini" bindtap='confirmSelect'>确定</button>
+    </view>
+
+</view>

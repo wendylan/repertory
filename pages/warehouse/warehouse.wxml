@@ -13,7 +13,7 @@
 
         <!-- 表格 -->
         <view wx:if="{{isTable}}">
-            
+
             <view class="table">
                 <view class="tr bg-w">
                     <view class="th">仓库</view>
@@ -26,7 +26,8 @@
                 <block wx:for="{{repertory}}" wx:key="{{index}}">
                     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
                         <view class="td">{{item.warehouse}}</view>
-                        <view class="td"><text>{{item.thread_num}}</text> </view>
+                        <view class="td">
+                            <text>{{item.thread_num}}</text> </view>
                         <view class="td">{{item.snail_num}}</view>
                         <view class="td">{{item.altitude_num}}</view>
                         <view class="td">{{item.total}}</view>
@@ -67,7 +68,7 @@
                 <text>品种合计：</text>
                 <radio-group class="radio-group" bindchange="radioChange">
                     <label class="radio" wx:for="{{cateType}}" wx:key="{{index}}">
-                        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
                     </label>
                 </radio-group>
             </view>
@@ -77,13 +78,13 @@
             </view>
         </view>
     </view>
-    
+
 </view>
 
 <view wx:if="{{isOpen}}" class='filter_box'>
     <checkbox-group bindchange="checkboxChange" class="check_box">
         <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
-            <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
         </label>
     </checkbox-group>
 
@@ -91,5 +92,5 @@
         <button type="warn" size='mini' bindtap='resetSelect'>重置</button>
         <button type="primary" size="mini" bindtap='confirmSelect'>确定</button>
     </view>
-    
+
 </view>

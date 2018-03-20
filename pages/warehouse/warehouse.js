@@ -3,7 +3,6 @@
 var wxCharts = require('../../utils/wxcharts.js');
 Page({
     data: {
-        screenWidth: null,
         items: [
             { name: 'CKRZ', value: '容正仓' },
             { name: 'ck_HPLG', value: '黄埔旧港', checked: 'true' },
@@ -33,7 +32,7 @@ Page({
             { "text": "去年同期库存", "thread_num": "564", "snail_num": "15000", "altitude_num": "100000", "total": "115564" }
         ]
     },
-    getInitData(){
+    getInitData() {
         wx.request({
             // url: 'http://sug.music.baidu.com/info/suggestion', //仅为示例，并非真实的接口地址
             // url: 'https://www.sojson.com/open/api/weather/json.shtml?city=五华', //仅为示例，并非真实的接口地址
@@ -46,7 +45,7 @@ Page({
         })
     },
     // 趋势图的展示
-    getChartData(){
+    getChartData() {
         new wxCharts({
             canvasId: 'warehouse-chart',
             type: 'line',
@@ -70,14 +69,14 @@ Page({
         });
     },
     // 打开表格
-    openTable(){
+    openTable() {
         let isTable = this.data.isTable;
         this.setData({
             isTable: true
         });
     },
     // 打开趋势图
-    openImg(){
+    openImg() {
         let isTable = this.data.isTable;
         this.setData({
             isTable: false
@@ -87,7 +86,7 @@ Page({
         }
     },
     // 打开筛选框
-    openFilter(){
+    openFilter() {
         let isOpen = this.data.isOpen;
         this.setData({
             isOpen: !isOpen
@@ -104,32 +103,32 @@ Page({
         console.log('checkbox发生change事件，携带value值为：', e.detail.value)
     },
     // 确定
-    confirmSelect(){
+    confirmSelect() {
         console.log('confirm');
         this.openFilter();
     },
 
     // 重置
-    resetSelect(){
+    resetSelect() {
         console.log('reset');
         this.openFilter();
     },
-    onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+    onLoad: function (options) {
+        // 页面初始化 options为页面跳转所带来的参数
         this.getChartData();
     },
-    onReady:function(){
-    // 页面渲染完成
+    onReady: function () {
+        // 页面渲染完成
         // this.getInitData();
     },
-    onShow:function(){
-    // 页面显示
+    onShow: function () {
+        // 页面显示
         this.getChartData();
     },
-    onHide:function(){
-    // 页面隐藏
+    onHide: function () {
+        // 页面隐藏
     },
-    onUnload:function(){
-    // 页面关闭
+    onUnload: function () {
+        // 页面关闭
     }
 })
