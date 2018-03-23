@@ -93,6 +93,28 @@ Page({
         });
     },
 
+    // 全部
+    selectAll() {
+        let temp = this.data.items;
+        temp.map(function (e) {
+            e.checked = 'true';
+        });
+        console.log(temp);
+        this.setData({
+            items: temp
+        });
+    },
+
+    noSelectAll(){
+        let temp = this.data.items;
+        temp.map(function (e) {
+            e.checked = '';
+        });
+        // console.log(temp);
+        this.setData({
+            items: temp
+        });
+    },
     // 品名单选框
     radioChange: function (e) {
         console.log('radio发生change事件，携带value值为：', e.detail.value)
@@ -104,12 +126,14 @@ Page({
     },
     // 确定
     confirmSelect() {
+        console.log(this.data.items);
         console.log('confirm');
         this.openFilter();
     },
 
     // 重置
     resetSelect() {
+        console.log(this.data.items);
         console.log('reset');
         this.openFilter();
     },

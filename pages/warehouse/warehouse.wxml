@@ -82,6 +82,13 @@
 </view>
 
 <view wx:if="{{isOpen}}" class='filter_box'>
+    <view class="top_filter">
+        <text wx:if="{{isTable}}" class="big_text">仓库:</text>
+        <text wx:if="{{!isTable}}" class="big_text">所有仓库合计:</text>
+        <button bindtap='selectAll' type="default" class="button_all" size='mini' wx:if="{{isTable}}">全部</button>
+        <button bindtap='noSelectAll' type="default" class="button_all" size='mini' wx:if="{{isTable}}">取消全选</button>
+    </view>
+    
     <checkbox-group bindchange="checkboxChange" class="check_box">
         <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
             <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}

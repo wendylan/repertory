@@ -35,7 +35,7 @@
                         <view class="td">{{item.outInput}}</view>
                     </view>
                     <view class="tr" wx:else>
-                        <view class="td">{{item.brand}}</view>
+                        <view class="td" bindtap='showDetail' data-index="{{item.brand}}">{{item.brand}}</view>
                         <view class="td">{{item.thread_num}}</view>
                         <view class="td">{{item.snail_num}}</view>
                         <view class="td">{{item.altitude_num}}</view>
@@ -85,6 +85,7 @@
 </view>
 
 <view wx:if="{{isOpen}}" class='filter_box'>
+    <button bindtap='selectAll' type="default" class="button_all" wx:if="{{isTable}}">全部</button>
     <checkbox-group bindchange="checkboxChange" class="check_box">
         <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
             <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}

@@ -59,6 +59,21 @@ page {
     position: fixed;
     right: 0;
     top: 0;
+    text-align: center;
+}
+
+.top_filter{
+    text-align: left;
+    margin-top: 10px;
+}
+.big_text{
+    font-weight: bold;
+    /* margin-right: 10px; */
+}
+.button_all{
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 5px;
 }
 
 .tip_box {

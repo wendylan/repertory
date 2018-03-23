@@ -18,19 +18,19 @@
         "list": [
             {
                 "pagePath": "pages/warehouse/warehouse",
-                "text": "仓库库存",
+                "text": "仓库",
                 "iconPath": "images/home.png",
                 "selectedIconPath": "images/home-actived.png"
             },
             {
                 "pagePath": "pages/brands/brands",
-                "text": "品牌库存",
+                "text": "品牌",
                 "iconPath": "images/note.png",
                 "selectedIconPath": "images/note-actived.png"
             },
             {
                 "pagePath": "pages/size/size",
-                "text": "规格库存",
+                "text": "规格",
                 "iconPath": "images/star.png",
                 "selectedIconPath": "images/star-actived.png"
             },

@@ -126,6 +126,18 @@ Page({
         });
     },
 
+    // 全部
+    selectAll() {
+        let temp = this.data.items;
+        temp.map(function (e) {
+            e.checked = 'true';
+        });
+        console.log(temp);
+        this.setData({
+            items: temp
+        });
+    },
+    
     // 品名单选框
     radioChange: function (e) {
         console.log('radio发生change事件，携带value值为：', e.detail.value)
